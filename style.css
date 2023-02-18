@@ -1,0 +1,204 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .box {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+.container .box .middle-bubble {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  z-index: 1000;
+  font-size: 25px;
+  line-height: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: cornsilk;
+  color: darksalmon;
+}
+
+.container .box .middle-bubble::before {
+  content: "\f015";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 25px;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  color: darksalmon;
+}
+
+.container .box .middle-bubble.active::before {
+  content: "\f00d";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 25px;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  color: darksalmon;
+}
+
+.container .box .bubble-split {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 50;
+  -webkit-animation: rotate 12s linear infinite;
+          animation: rotate 12s linear infinite;
+}
+
+.container .box .bubble-split.active .bubble:nth-child(1) {
+  -webkit-transform: translateY(-100px);
+          transform: translateY(-100px);
+  -webkit-transition-delay: .1s;
+          transition-delay: .1s;
+}
+
+.container .box .bubble-split.active .bubble:nth-child(2) {
+  -webkit-transform: translate(-70px, -70px);
+          transform: translate(-70px, -70px);
+  -webkit-transition-delay: .2s;
+          transition-delay: .2s;
+}
+
+.container .box .bubble-split.active .bubble:nth-child(3) {
+  -webkit-transform: translateX(-100px);
+          transform: translateX(-100px);
+  -webkit-transition-delay: .3s;
+          transition-delay: .3s;
+}
+
+.container .box .bubble-split.active .bubble:nth-child(4) {
+  -webkit-transform: translate(-70px, 70px);
+          transform: translate(-70px, 70px);
+  -webkit-transition-delay: .4s;
+          transition-delay: .4s;
+}
+
+.container .box .bubble-split.active .bubble:nth-child(5) {
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+  -webkit-transition-delay: .5s;
+          transition-delay: .5s;
+}
+
+.container .box .bubble-split.active .bubble:nth-child(6) {
+  -webkit-transform: translate(70px, 70px);
+          transform: translate(70px, 70px);
+  -webkit-transition-delay: .6s;
+          transition-delay: .6s;
+}
+
+.container .box .bubble-split.active .bubble:nth-child(7) {
+  -webkit-transform: translateX(100px);
+          transform: translateX(100px);
+  -webkit-transition-delay: .7s;
+          transition-delay: .7s;
+}
+
+.container .box .bubble-split.active .bubble:nth-child(8) {
+  -webkit-transform: translate(70px, -70px);
+          transform: translate(70px, -70px);
+  -webkit-transition-delay: .8s;
+          transition-delay: .8s;
+}
+
+.container .box .bubble-split .bubble {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 30px;
+  line-height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: cornsilk;
+  color: darksalmon;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.container .box .bubble-split .bubble i {
+  position: absolute;
+  animation: rotate 12s linear infinite reverse;
+}
+/*# sourceMappingURL=style.css.map */
